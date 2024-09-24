@@ -9,9 +9,9 @@ namespace Motus
 
             string Essai;
             bool fin = false;
-
-            Letter firstLetter = start();
-            Console.WriteLine($"{firstLetter.letter} _ _ _ _ _ _ _\n");
+            string Word = ChercheMot();
+            
+            Console.WriteLine($"{Word[0]} _ _ _ _ _ _ _\n");
 
             while (!fin)
             {
@@ -20,21 +20,21 @@ namespace Motus
                 Essai = Console.ReadLine();
 
                 // appelle fct pour comparer les lettres
-                Letter[] mots = Compare(Essai);
+                Letter[] CharWord = Verify.verifyWord(Essai, Word);
 
                 for (int i = 0; i < 8; i++)
                 {
-                    if (mots[i].isWellPlaced)
+                    if (CharWord[i].isWellPlaced)
                     {
                         Console.BackgroundColor = ConsoleColor.Green;
-                        Console.Write(mots[i].letter);
+                        Console.Write(CharWord[i].letter);
                     }
-                    else if (mots[i].isWrongPlaced)
+                    else if (CharWord[i].isWrongPlaced)
                     {
                         Console.BackgroundColor = ConsoleColor.Yellow;
-                        Console.Write(mots[i].letter);
+                        Console.Write(CharWord[i].letter);
                     }
-                    else if (mots[i].isNotPresent)
+                    else if (CharWord[i].isNotPresent)
                     {
                         Console.BackgroundColor = ConsoleColor.Red;
                         Console.Write("_");
@@ -44,7 +44,7 @@ namespace Motus
                 Console.WriteLine("\n\n");
 
                 int cpt = 0;
-                foreach (Letter l in mots)
+                foreach (Letter l in CharWord)
                 {
                     if (!l.isWellPlaced)
                     {
