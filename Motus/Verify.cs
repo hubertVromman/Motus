@@ -23,7 +23,7 @@ namespace Motus {
             //check lettre bien placée
             for (int i = 0; i < toFind.Length; i++) {
                 if (toFind[i] == userGuess[i]) {
-                    toReturn[i] = new Letter(i) {
+                    toReturn[i] = new Letter() {
                         letter = toFind[i],
                         isWellPlaced = true,
                     };

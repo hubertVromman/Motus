@@ -34,7 +34,7 @@ namespace Motus
                         Console.BackgroundColor = ConsoleColor.Yellow;
                         Console.Write(CharWord[i].letter);
                     }
-                    else if (CharWord[i].isNotPresent)
+                    else if (CharWord[i].notPresent)
                     {
                         Console.BackgroundColor = ConsoleColor.Red;
                         Console.Write(CharWord[i].letter);
@@ -62,7 +62,7 @@ namespace Motus
         {
             Random rnd = new Random();
             int random = rnd.Next(20);
-            string mot = ((Dictionnaire)random).ToString();
+            string mot = ((Dico)random).ToString();
             return mot;
         }
     }
