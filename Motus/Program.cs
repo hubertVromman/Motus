@@ -37,7 +37,7 @@ namespace Motus
                     else if (CharWord[i].isNotPresent)
                     {
                         Console.BackgroundColor = ConsoleColor.Red;
-                        Console.Write("_");
+                        Console.Write(CharWord[i].letter);
                     }
                     Console.Write(" ");
                 }
@@ -46,7 +46,7 @@ namespace Motus
                 int cpt = 0;
                 foreach (Letter l in CharWord)
                 {
-                    if (!l.isWellPlaced)
+                    if (l.isWellPlaced)
                     {
                         cpt++;
                     }
