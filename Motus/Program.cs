@@ -1,5 +1,4 @@
 
-
 namespace Motus
 {
     internal class Program
@@ -56,11 +55,22 @@ namespace Motus
                 if (cpt == 8)
                     fin = true;
             }
+            
 
         }
-
-       
-
+        public static string ChercheMot()
+        {
+            Random rnd = new Random();
+            int random = rnd.Next(20);
+            string mot = ((Dictionnaire)random).ToString();
+            return mot;
+        }
     }
 }
+
+
+
+
+
+
 

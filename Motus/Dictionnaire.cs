@@ -28,5 +28,5 @@ namespace Motus
         vermoulu,
         jonchant,
         jumelles
-    }
+}
 }
